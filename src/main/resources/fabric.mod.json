@@ -3,7 +3,7 @@
     "id": "f3teverywhere",
     "version": "${version}",
     "name": "F3+T Everywhere",
-    "description": "Allows you to reload resourcepack with F3+T while within menus.",
+    "description": "Allows you to reload resourcepacks with F3+T while in menus.",
     "authors": ["Enchanted_Games"],
     "contact": {
         "homepage": "https://github.com/Enchanted-Games/f3-t-everywhere",
@@ -11,7 +11,7 @@
         "issues": "https://github.com/Enchanted-Games/f3-t-everywhere/issues"
     },
     "license": "CC0-1.0",
-    "icon": "assets/f3teverywhere/icon.png",
+    "icon": "assets/f3-t-everywhere/icon.png",
     "environment": "client",
     "entrypoints": {
         "client": ["games.enchanted.f3teverywhere.ClientMain"]
