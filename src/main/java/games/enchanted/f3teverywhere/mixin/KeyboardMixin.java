@@ -21,6 +21,7 @@ public abstract class KeyboardMixin {
 
 	@Inject(at = @At("HEAD"), method = "Lnet/minecraft/client/Keyboard;onKey(JIIII)V")
 	public void onKey(long window, int key, int scancode, int action, int modifiers, CallbackInfo ci) {
+		// TODO: some future version made "client" a private
 		if (window == this.client.window.getHandle()) {
 			boolean bl2;
 			if (action != 0 && this.client.currentScreen != null) {
