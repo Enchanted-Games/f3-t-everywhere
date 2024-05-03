@@ -1,34 +1,28 @@
 {
-    "schemaVersion": 1,
-    "id": "f3teverywhere",
-    "version": "${version}",
-    "name": "F3+T Everywhere",
-    "description": "Allows you to reload resourcepacks with F3+T while in menus.",
-    "authors": ["Enchanted_Games"],
-    "contact": {
-        "homepage": "https://github.com/Enchanted-Games/f3-t-everywhere",
-        "sources": "https://github.com/Enchanted-Games/f3-t-everywhere",
-        "issues": "https://github.com/Enchanted-Games/f3-t-everywhere/issues"
-    },
-    "license": "CC0-1.0",
-    "icon": "assets/f3-t-everywhere/icon.png",
-    "environment": "client",
-    "entrypoints": {
-        "client": ["games.enchanted.f3teverywhere.ClientMain"]
-    },
-    "mixins": [
-        {
-            "config": "f3-t-everywhere.mixins.json",
-            "environment": "client"
-        }
-    ],
-    "depends": {
-        "fabricloader": ">=0.13.0",
-        "minecraft": "~1.19.4",
-        "java": ">=17",
-        "fabric-api": "*"
-    },
-    "suggests": {
-        "another-mod": "*"
-    }
+	"schemaVersion": 1,
+	"id": "f3teverywhere",
+	"version": "${version}",
+	"name": "F3+T Everywhere",
+	"description": "Allows you to reload resourcepacks with F3+T while in menus. Now also works for other F3 debug keybinds!",
+	"authors": ["Enchanted_Games"],
+	"contact": {
+			"homepage": "https://github.com/Enchanted-Games/f3-t-everywhere",
+			"sources": "https://github.com/Enchanted-Games/f3-t-everywhere",
+			"issues": "https://github.com/Enchanted-Games/f3-t-everywhere/issues"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/f3-t-everywhere/icon.png",
+	"environment": "client",
+	"entrypoints": {},
+	"mixins": [
+		"f3-t-everywhere.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.14",
+		"java": ">=8"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
 }
