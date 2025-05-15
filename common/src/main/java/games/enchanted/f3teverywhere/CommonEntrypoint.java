@@ -4,6 +4,6 @@ import games.enchanted.f3teverywhere.platform.Services;
 
 public class CommonEntrypoint {
     public static void initBeforeRegistration() {
-        Logging.info("Hello from Common init on {}! we are currently in a {} environment!", Services.PLATFORM.getPlatformName(), Services.PLATFORM.getEnvironmentName());
+        Logging.info("Mod is loading on a {} environment", Services.PLATFORM.getPlatformName());
     }
 }
