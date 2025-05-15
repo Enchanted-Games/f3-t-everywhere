@@ -1,5 +1,7 @@
 package games.enchanted.f3teverywhere.mixin;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.mojang.blaze3d.platform.InputConstants;
 import games.enchanted.f3teverywhere.Constants;
 import net.minecraft.ChatFormatting;
@@ -44,12 +46,15 @@ public abstract class KeyboardHandlerMixin {
         }
     }
 
-    @Inject(
-        at = @At("HEAD"),
-        method = "debugComponent(Lnet/minecraft/ChatFormatting;Lnet/minecraft/network/chat/Component;)V"
+    @WrapOperation(
+        at = @At(value = "INVOKE", target = "Lnet/minecraft/client/KeyboardHandler;decorateDebugComponent(Lnet/minecraft/ChatFormatting;Lnet/minecraft/network/chat/Component;)Lnet/minecraft/network/chat/Component;"),
+        method = {"debugWarningComponent", "debugFeedbackComponent"}
     )
-    private void f3teverywhere$showDebugFeedbackToast(ChatFormatting formatting, Component message, CallbackInfo ci) {
-        if(this.minecraft.level != null) return;
+    private Component f3teverywhere$showDebugFeedbackToast(ChatFormatting formatting, Component message, Operation<Component> original) {
+        if(this.minecraft.level != null) {
+            return original.call(formatting, message);
+        }
         SystemToast.addOrUpdate(this.minecraft.getToastManager(), Constants.DEBUG_FEEDBACK_TOAST, Component.translatable("debug.prefix").withStyle(formatting, ChatFormatting.BOLD), message);
+        return original.call(formatting, message);
     }
 }

@@ -46,4 +46,4 @@ plugins {
 rootProject.name = 'F3 + T Everywhere'
 include('common')
 include('fabric')
-include('neoforge')
+//include('neoforge')
